@@ -1,0 +1,23 @@
+.board{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 500px;
+    height: 500px;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.box{
+    border: 1px solid black;
+    flex-grow: 1;
+}
+
+.box-filled{
+    background-color: black;
+}
