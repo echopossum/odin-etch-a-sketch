@@ -3,13 +3,44 @@
 
 const container = document.querySelector('.container')
 
+const sizeButton = document.querySelector('#sizeButton')
+const blackColorButton = document.querySelector('#blackButton')
+const randomColorButton = document.querySelector('#randomButton')
+const eraseButton = document.querySelector('#eraseButton')
+
+let currentColor = 'black'
+
+sizeButton.addEventListener('click',changeGridSize)
+blackColorButton.addEventListener('click',()=>{
+    currentColor = 'black'
+})
+
+randomColorButton.addEventListener('click',()=>{
+
+})
+
+eraseButton.addEventListener('click',()=>{
+    currentColor = 'erase'
+})
+
 const board = document.createElement('div')
 board.classList.add('board')
 container.appendChild(board)
 
 board.addEventListener('mouseover',(e)=>{
     if(e.target.classList.contains("box")){
-        e.target.classList.add('box-filled')
+        switch(currentColor){
+            case 'black':
+                e.target.style.backgroundColor = 'black'
+                break
+            case 'erase':
+                e.target.style.backgroundColor = 'white'
+                break
+
+            case 'random':
+
+        }
+        
     }
 })
 
