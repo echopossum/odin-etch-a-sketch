@@ -7,6 +7,7 @@ const sizeButton = document.querySelector('#sizeButton')
 const blackColorButton = document.querySelector('#blackButton')
 const randomColorButton = document.querySelector('#randomButton')
 const eraseButton = document.querySelector('#eraseButton')
+const clearButton = document.querySelector('#clearButton')
 
 let currentColor = 'black'
 
@@ -22,6 +23,8 @@ randomColorButton.addEventListener('click',()=>{
 eraseButton.addEventListener('click',()=>{
     currentColor = 'erase'
 })
+
+clearButton.addEventListener('click',resetGrid)
 
 const board = document.createElement('div')
 board.classList.add('board')
@@ -81,8 +84,9 @@ function changeGridSize(){
 function resetGrid(){
    let boxes = Array.from(document.querySelectorAll('.box'))
    boxes.forEach(element => {
-        element.classList.remove("box-filled")
+        element.style.backgroundColor = 'white'
    });
+   currentColor = 'black'
 }
 
 
