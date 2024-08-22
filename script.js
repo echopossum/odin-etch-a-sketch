@@ -1,18 +1,11 @@
 //Element Declarations
-const resetButton = document.createElement('button')
-resetButton.textContent = 'Reset'
-resetButton.classList.add('button')
-resetButton.addEventListener('click',resetGrid)
-document.body.appendChild(resetButton)
 
-const resize = document.createElement('button')
-resize.textContent = 'Change Size'
-resize.classList.add('button')
-document.body.appendChild(resize)
+
+const container = document.querySelector('.container')
 
 const board = document.createElement('div')
 board.classList.add('board')
-document.body.appendChild(board)
+container.appendChild(board)
 
 board.addEventListener('mouseover',(e)=>{
     if(e.target.classList.contains("box")){
@@ -20,9 +13,6 @@ board.addEventListener('mouseover',(e)=>{
     }
 })
 
-
-
-resize.addEventListener('click',changeGridSize)
 
 function createGrid(size){
     clearGrid()
@@ -65,4 +55,4 @@ function resetGrid(){
 }
 
 
-createGrid(13)
+createGrid(16)
