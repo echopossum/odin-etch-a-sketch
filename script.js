@@ -16,7 +16,7 @@ blackColorButton.addEventListener('click',()=>{
 })
 
 randomColorButton.addEventListener('click',()=>{
-
+    currentColor = 'random'
 })
 
 eraseButton.addEventListener('click',()=>{
@@ -38,7 +38,7 @@ board.addEventListener('mouseover',(e)=>{
                 break
 
             case 'random':
-
+                e.target.style.backgroundColor = generateRandomColor()
         }
         
     }
@@ -85,5 +85,13 @@ function resetGrid(){
    });
 }
 
+
+function generateRandomColor(){
+    let red = Math.floor(Math.random()*255)
+    let green = Math.floor(Math.random()*255)
+    let blue = Math.floor(Math.random()*255)
+
+    return `rgb(${red},${green},${blue})`
+}
 
 createGrid(16)
