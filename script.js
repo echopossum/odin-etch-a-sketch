@@ -1,6 +1,5 @@
 //Element Declarations
 
-
 const container = document.querySelector('.container')
 
 const sizeButton = document.querySelector('#sizeButton')
